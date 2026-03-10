@@ -24,4 +24,4 @@ logs
 *.env.test
 *.env.production
 .vscode
-
+CLAUDE.md
