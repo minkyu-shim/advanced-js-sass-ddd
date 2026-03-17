@@ -1,4 +1,4 @@
-import { CourseCode, Credits } from "./types";
+import { CourseCode, Credits } from "./types"
 
 export class Course {
   readonly code: CourseCode;
