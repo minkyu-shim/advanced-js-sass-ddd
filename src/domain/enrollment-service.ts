@@ -1,6 +1,6 @@
 import { Student } from "./student"
 import { Course } from "./course"
-import { Enrollment } from "./enrollments"
+import { Enrollment } from "./enrollment"
 import { Semester, EnrollmentId, createEnrollmentId, Credits } from "./types"
 import { IEventEmitter, StudentEnrolled, CourseFull, CourseCapacityReached, EnrollmentCancelled } from "../infrastructure/event-emitter"
 
@@ -24,7 +24,7 @@ export class EnrollmentService {
     }
 
     if (course.isFull()) {
-      return new Error("Course ${course.code} is full.");
+      return new Error("Course ${course.code} is full.")
     }
 
     if (!student.canEnroll(course.credits)) {
@@ -56,7 +56,7 @@ export class EnrollmentService {
   cancel(enrollmentId: EnrollmentId, enrollments: Enrollment[]): void | Error {
     const enrollment = enrollments.find((e) => e.id === enrollmentId)
     if (!enrollment) {
-      return new Error(`Enrollment with ID ${enrollmentId} not found.`)
+      return new Error("Enrollment with ID ${enrollmentId} not found.")
     }
     enrollment.cancel()
 
