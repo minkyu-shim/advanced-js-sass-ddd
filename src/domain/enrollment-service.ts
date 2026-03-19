@@ -24,7 +24,7 @@ export class EnrollmentService {
     }
 
     if (course.isFull()) {
-      return new Error("Course ${course.code} is full.");
+      return new Error("Course ${course.code} is full.")
     }
 
     if (!student.canEnroll(course.credits)) {
